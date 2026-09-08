@@ -2,18 +2,24 @@ import './App.css';
 import ExpensiveItem from './components/ExpensiveItem';
 
 const App = () => {
+  const expenses = [
+  {
+    date: new Date(2024, 10, 12),
+    title: 'New book',
+    price: 30.99
+  },
+  {
+    date: new Date(2024, 10, 12),
+    title: 'New jeans',
+    price: 99.99
+  }
+]
 
-  const date = new Date(2026, 8, 2)
-  const title = 'New book'
-  const price = 30.99
+
   return (
     <div className="App">
-      <ExpensiveItem
-       date={date}
-       title={title}
-       price={price}
-      />
-
+      <ExpensiveItem data={expenses[0]}/>
+      <ExpensiveItem data={expenses[1]}/>
     </div>
   );
 }

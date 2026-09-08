@@ -1,21 +1,21 @@
-import './ExpensiveItem.css'
+import './ExpensiveItem.css';
+import ExpenseDate from './ExpenseDate'
 
 const ExpensiveItem = (props) => {
-    const date = new Date(2026, 8, 2)
-    const title = "New book"
-    const price = 30.99
 
-    console.log(props)
+    const day = props.data.date.toLocaleString('en-US', {day: '2-digit'})
+    const month = props.data.date.toLocaleString('en-US', {month: 'long'})
+    const year = props.data.date.getFullYear()
 
     return (
         <div className='expense-item'>
-            <div>{props.date.to.String()}</div>
-            <div className='expense-item__title'>
-                <h2>{props.title}</h2>
-                <div className='expense.item__price'>{props.price}</div>
+            <ExpenseDate date={props.data.date}/>
+            <div className='expense-item__description'>
+                <h2>{props.data.title}</h2>
+                <div className='expense-item__price'>{props.data.price}</div>
             </div>
         </div>
     )
 }
 
-export default ExpensiveItem
+export default ExpensiveItem;
