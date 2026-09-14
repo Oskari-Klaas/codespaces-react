@@ -1,11 +1,14 @@
-import ExpensiveItem from './ExpensiveItem';
+import ExpenseItem from './ExpenseItem';
 import './Expenses.css';
 
 const Expenses = (props) => {
+
+console.log(props);
+  
   return (
     <div className="expenses">
-      <ExpensiveItem data={props.data[0]} />
-      <ExpensiveItem data={props.data[1]} />
+      <ExpenseItem data={props.items[0]}/>
+      <ExpenseItem data={props.items[1]}/>
     </div>
   );
 };
