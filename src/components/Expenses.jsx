@@ -3,8 +3,7 @@ import './Expenses.css';
 
 const Expenses = (props) => {
 
-console.log(props);
-  
+
   return (
     <div className="expenses">
       <ExpenseItem data={props.items[0]}/>
