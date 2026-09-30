@@ -2,8 +2,10 @@ import { expect, test } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+test('renders each expense and its amount', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeDefined();
+  expect(screen.getByText('New book')).toBeDefined();
+  expect(screen.getByText('New jeans')).toBeDefined();
+  expect(screen.getByText('30.99')).toBeDefined();
+  expect(screen.getByText('99.99')).toBeDefined();
 });
